@@ -53,6 +53,7 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             //4、不通过，响应401状态码
             response.setStatus(401);
             return false;
+            //5、响应结果
         }
     }
 }
