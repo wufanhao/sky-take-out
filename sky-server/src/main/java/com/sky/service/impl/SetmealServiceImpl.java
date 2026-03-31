@@ -73,6 +73,10 @@ public class SetmealServiceImpl implements SetmealService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
+    /** 
+     * 批量删除套餐
+     * @param ids
+     */
     @Transactional
     public void deleteBatch(List<Long> ids) {
         
