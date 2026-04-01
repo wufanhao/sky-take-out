@@ -51,7 +51,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }else {
             //如果不存在，需要插入一条购物车数据
            
-           
             Long dishId = shoppingCartDTO.getDishId();
             if (dishId != null) {
                 //本次添加到购物车的是菜品
@@ -75,5 +74,23 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         
         }
 
+    }
+
+    /**
+     * 查看购物车
+     * @return
+     */
+    public List<ShoppingCart> showShoppingCart() {
+        ShoppingCart shoppingCart = ShoppingCart.builder()
+                    .userId(BaseContext.getCurrentId())
+                    .build();
+        List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
+        return list;
+    }
+
+    public void cleanShoppingCart() {
+        //获取到当前微信用户的id
+        Long userId = BaseContext.getCurrentId();
+        shoppingCartMapper.deleteByUserId(userId);
     }
 }
