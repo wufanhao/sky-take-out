@@ -58,6 +58,10 @@ sky:
     weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
     notifyUrl: ${sky.wechat.notifyUrl}
     refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+  shop:
+    address: 北京市海淀区上地十街18号
+  baidu:
+    ak: ${sky.baidu.ak}  # 百度地图AK
 alioss:
   endpoint: ${sky.alioss.endpoint}
   access-key-id: ${sky.alioss.access-key-id}
